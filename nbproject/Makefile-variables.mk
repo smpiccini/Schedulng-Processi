@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Debug=fcfs
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/fcfs
+CND_ARTIFACT_NAME_Debug=sjf
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/sjf
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Debug=fcfs.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/fcfs.tar
+CND_PACKAGE_NAME_Debug=sjf.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/sjf.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Release=fcfs
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/fcfs
+CND_ARTIFACT_NAME_Release=sjf
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/sjf
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Release=fcfs.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/fcfs.tar
+CND_PACKAGE_NAME_Release=sjf.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/sjf.tar
 #
 # include compiler specific variables
 #

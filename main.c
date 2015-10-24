@@ -8,37 +8,69 @@ struct s_elemento{
 
 typedef struct s_elemento elemento;
 
+void stampaLista(elemento* first);
 elemento* aggiungiTesta(elemento* first, int value);
 elemento* aggiungiCoda(elemento* first, int value);
+elemento* ordinaLista(elemento* first);
 float calcolaTempo(elemento* first, int numeroProcessi);
 void svuotaLista(elemento* first);
 
 int main(int argc, char** argv) {
-    int flag, ordine, i = 0;
+    int flag, i = 0;
     int ExecuteTime;
     float tempoMedio;
     elemento *primo = NULL;
     
-    printf("Ordine normale | Ordine inverso (1|0) : ");
-    scanf("%d", &ordine);
     do{
         i++;
         printf("Inserisci il tempo d'esecuzione del processo n.%d :", i);
         scanf("%d", &ExecuteTime);
-        if (ordine==0){
-            primo=aggiungiTesta(primo, ExecuteTime);
-        }
-        else{
-            primo=aggiungiCoda(primo, ExecuteTime);
-        }
+        primo=aggiungiCoda(primo, ExecuteTime);
+        
         printf("Vuoi inserire un nuovo processo (1|0) : ");
         scanf("%d", &flag);
     }while(flag!=0);
+    
+    ordinaLista(primo);
+    printf("Lista processi in ordine di esecuzione (SJF):\n");
+    stampaLista(primo);
+    
 
     tempoMedio=calcolaTempo(primo, i);
-    printf("Tempo di attesa medio: %f\n", tempoMedio);
+    printf("\nTempo di attesa medio: %f\n", tempoMedio);
+    svuotaLista(primo);
     
     return (EXIT_SUCCESS);
+}
+
+elemento* ordinaLista(elemento* first){
+    elemento* scorri, *pj, *pk;
+    int temp;
+    scorri=first;
+    
+    while(scorri->next!=NULL){
+        pj=first;
+        while(pj->next!=NULL){
+            pk=pj->next;
+            if(pj->value > pk->value){
+                temp=pj->value;
+                pj->value=pk->value;
+                pk->value=temp;
+            }
+            pj=pj->next;
+        }
+        scorri=scorri->next;
+    }
+    return first;
+}
+
+void stampaLista(elemento* first){
+    elemento* scorri=first;
+    while(scorri!=NULL){
+        printf("%d ", scorri->value);
+        scorri=scorri->next;
+    }
+    return;
 }
 
 elemento* aggiungiTesta(elemento* first, int value){
