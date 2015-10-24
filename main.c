@@ -19,7 +19,7 @@ int controllaTempoRimasto(elemento* first);
 int main(int argc, char** argv) {
     int flag, numeroTask, i, tempoAssoluto = 0;
     int ExecuteTime;
-    float attesaMedia,acc = 0;
+    float attesaMedia = 0;
     elemento *primo = NULL;
     elemento *puntaShorterTask = NULL;
     elemento *scorri = NULL;
@@ -59,11 +59,11 @@ int main(int argc, char** argv) {
     }
     scorri=primo;
     while(scorri!=NULL){
-        acc+=scorri->waitingTime;
+        attesaMedia+=scorri->waitingTime;
         scorri=scorri->next;
     }
-    attesaMedia=acc/numeroTask;
-    printf("Tempo di attesa medio: %f\n", attesaMedia);
+    attesaMedia/=numeroTask;
+    printf("Tempo di attesa medio: %.2f\n", attesaMedia);
     svuotaLista(primo);
     
     return (EXIT_SUCCESS);
